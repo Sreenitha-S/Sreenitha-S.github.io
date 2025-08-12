@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <title>Projects</title>
+</head>
+<body>
+  <nav class="navabar">
+    <ul class="Links">
+      <li><a href='../index.html'>Home</a></li>
+      <li><a href="../pages/profile.html">Profile</a></li>
+      <li><a href='../pages/projects.html'>Projects</a></li>
+      <li><a href='../pages/education.html'>Education</a></li>
+      <li><a href='../pages/contact.html'>Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Projects</h1>
+  </header>
+
+  <section>
+    <h2>AI-based Multiple Document Analyzer</h2>
+    <p>Offline document analysis tool to summarize large documents using NLP and Hugging Face models.</p>
+  </section>
+
+  <section>
+    <h2>Smart Home Energy Prediction Model</h2>
+    <p>Predicts total energy consumption of a house based on appliance usage details from the user.</p>
+  </section>
+
+  <section id="project-gallery">
+    <h2>Project Gallery</h2>
+    <img id="main-image" src="../images/project1.png" alt="Main Project">
+    <div class="thumbnails">
+      <img src="../images/project1.png" alt="Project 1">
+      <img src="../images/project2.png" alt="Project 2">
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 • Sreenitha S • Kochi</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".thumbnails img").click(function(){
+        $("#main-image").attr("src", $(this).attr("src"));
+      });
+    });
+  </script>
+</body>
+</html>
