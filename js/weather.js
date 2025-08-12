@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#getWeather").click(function () {
         let city = $("#city").val().trim();
-        let apiKey = "64e999375e75b74649fd52125228f925"; // <-- Replace with your API key from openweathermap.org
+        let apiKey = "enteapitharoola.."; // <-- Replace with your API key from openweathermap.org
 
         if (!city) {
             alert("Please enter a city name");
@@ -23,3 +23,4 @@ $(document).ready(function () {
         });
     });
 });
+
