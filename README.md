@@ -66,22 +66,24 @@ let apiUrl = `https://dev.to/api/articles?tag=${tag}`;
 ---
 
 ### 2️⃣ **Weather API Integration**
-- **File:** `js/weather.js`
-- Uses **OpenWeatherMap API** to get live weather for any entered city.
+- **File:** `js/weather.js`  
+- Uses **Open-Meteo API** (no API key required) to get live weather for any entered city.  
+- Implementation steps:  
+  1. City name → latitude & longitude via Open-Meteo **Geocoding API**.  
+  2. Fetch current weather using the **Forecast API**.  
 - Displays:
-  - City name
-  - Temperature (°C)
-  - Weather description
-  - Humidity
-  - Wind speed
+  - City name & country  
+  - Temperature (°C)  
+  - Wind speed  
+  - Weather code (numerical value)  
+
 - Integrated in `index.html` under `<section id="weather-section">`.
 
 **Code Snippet:**
 ```javascript
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-```
+let geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`;
 
-⚠ **Important:** API key should **NOT** be public. Keep it private or set it locally.
+let weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
 
 ---
 
@@ -105,9 +107,6 @@ $(".thumbnails img").click(function(){
    git clone https://github.com/<yourusername>/<yourusername>.github.io
    ```
 2. Open `index.html` in your browser.
-3. For **Weather API** to work:
-   - Get a free API key from [OpenWeatherMap](https://openweathermap.org/api).
-   - Replace `YOUR_OPENWEATHERMAP_API_KEY` in `js/weather.js` with your key.
 
 ---
 
